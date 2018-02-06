@@ -14,6 +14,7 @@ use Rack::Flash
   post '/songs' do
     #binding.pry
     @song = Song.create(name: params["Name"])
+    binding.pry
    params["genres"].each do |genre_id|
       @song.genres << Genre.find(genre_id)
     end
